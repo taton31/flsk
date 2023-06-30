@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Список зарегестрированных пользователей:</h1>
+    {% for user in users %}
+    <div><p>Имя пользователя: <b>{{ user.username }}</b> <br>Почта: <b>{{ user.email }}</b></p></div>
+    {% endfor %}
+{% endblock %}

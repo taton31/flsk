@@ -8,21 +8,7 @@ from app.models import User
 @app.route('/')
 @app.route('/index')
 def index():
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }, 
-        {
-            'author': {'username': 'Ипполит'},
-            'body': 'Какая гадость эта ваша заливная рыба!!'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    return render_template('index.html', title='Home')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -53,9 +39,8 @@ def signup():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
-        return redirect(url_for('login'))
-    return render_template('signup.html', title='SignUp', form=form)
+        return render_template('succes_signup.html', title='Succes')
+    return render_template('signup.html', title='Sign Up', form=form)
 
 
 @app.route('/converter', methods=['GET', 'POST'])
@@ -77,6 +62,6 @@ def logout():
 @app.route('/users')
 @login_required
 def users():
-    
-    return render_template('users.html', title='Sign In')
+    users = User.query.all()
+    return render_template('users.html', title='Users', users = users)
 

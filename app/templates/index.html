@@ -2,12 +2,8 @@
 
 {% block content %}
     {% if current_user.is_authenticated %}
-    <h1> Hi, {{ current_user.username }}! </h1>
+    <h1> Привет, {{ current_user.username }}! </h1>
     {% else %}
     <h1>Python Web</h1>
     {% endif %}
-    
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
 {% endblock %}
