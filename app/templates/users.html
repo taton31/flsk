@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block app_content %}
     <h1>Список зарегистрированных пользователей:</h1>
-    {% for user in users %}
-    <div><p>Имя пользователя: <b>{{ user.username }}</b> <br>Почта: <b>{{ user.email }}</b></p></div>
-    {% endfor %}
+    <table class="table">
+        {% for user in users %}
+        <tr>
+            <td>
+                Имя пользователя: <b>{{ user.username }}</b>
+            </td>
+            <td>
+                Почта: <b>{{ user.email }}</b>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
+

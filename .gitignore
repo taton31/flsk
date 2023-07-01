@@ -7,3 +7,5 @@ database
 trash
 
 *.env
+
+logs

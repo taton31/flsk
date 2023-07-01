@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %} 
     {% if current_user.is_authenticated %}
     <h1> Привет, {{ current_user.username }}! </h1>
     {% else %}
-    <h1>Python Web</h1>
+    <h1>Добро пожаловать!</h1>
     {% endif %}
 {% endblock %}

@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from app.models import User
 
 
+
 DataRequired_ru = 'Поле обязательно для заполнения'
 Email_ru = 'Некорректный Email'
 EqualTo_ru = 'Пароли не совпадают'
