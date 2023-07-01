@@ -12,8 +12,6 @@
             value: document.getElementById(value).value
         }).done(function(response) {
             document.getElementById(result_value).value = response['text']
-        }).fail(function() {
-            document.getElementById(result_value).value = "При конвертации произошла ошибка";
         });
     }
 </script>
@@ -36,7 +34,7 @@
 {% block app_content %} 
     <h1>Конвертер валют</h1>
     <div class="form-inline" style="display: flex;">
-        <input type="number" class="form-control" id="amount" value ="0" step="0.1" oninput="convert('from_currency','to_currency','amount','result')">
+        <input type="number" class="form-control" id="amount" value ="0" step="1" oninput="convert('from_currency','to_currency','amount','result')">
         <select class="form-control" id="from_currency" style="margin-right: 5px;" onchange="convert('from_currency','to_currency','amount','result')">
             <option value="USD">Доллар</option>
             <option value="EUR">Евро</option>
