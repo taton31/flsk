@@ -10,18 +10,18 @@ EqualTo_ru = 'Пароли не совпадают'
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(message=DataRequired_ru)])
-    password = PasswordField('Password', validators=[DataRequired(message=DataRequired_ru)])
-    remember_me = BooleanField('Remember Me')
+    username = StringField('Имя', validators=[DataRequired(message=DataRequired_ru)])
+    password = PasswordField('Пароль', validators=[DataRequired(message=DataRequired_ru)])
+    remember_me = BooleanField('Запомнить меня')
     submit = SubmitField('Войти')
 
 
 class SignUpForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(message=DataRequired_ru)])
+    username = StringField('Имя', validators=[DataRequired(message=DataRequired_ru)])
     email = StringField('Email', validators=[DataRequired(message=DataRequired_ru), Email(message=Email_ru)])
-    password = PasswordField('Password', validators=[DataRequired(message=DataRequired_ru), Length(min=8)])
+    password = PasswordField('Пароль', validators=[DataRequired(message=DataRequired_ru), Length(min=8)])
     password2 = PasswordField(
-        'Repeat Password', validators=[DataRequired(message=DataRequired_ru), EqualTo('password', message=EqualTo_ru)])
+        'Повторите пароль', validators=[DataRequired(message=DataRequired_ru), EqualTo('password', message=EqualTo_ru)])
     submit = SubmitField('Зарегистрироваться')
 
     def validate_username(self, username):

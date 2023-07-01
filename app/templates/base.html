@@ -8,14 +8,14 @@
     </head>
     <body>
         <nav>
-            <a href="{{ url_for('index') }}" > Домой   </a> 
-            <a href="{{ url_for('users') }}" > Пользователи   </a> 
-            <a href="{{ url_for('converter') }}" > Конвертор валют  </a>
+            <a href="{{ url_for('index') }}" > Домой </a> 
+            <a href="{{ url_for('users') }}" > Пользователи </a> 
+            <a href="{{ url_for('converter') }}" > Конвертор валют </a>
             {% if current_user.is_anonymous %}
-                <a href="{{ url_for('login') }}" > Войти   </a>
-                <a href="{{ url_for('signup') }}" > Регистрация   </a>
+                <a href="{{ url_for('login') }}" > Войти </a>
+                <a href="{{ url_for('signup') }}" > Регистрация </a>
             {% else %}
-                <a href="{{ url_for('logout') }}" > Выйти   </a>
+                <a href="{{ url_for('logout') }}" > Выйти </a>
             {% endif %}
         </nav>
         <hr>
