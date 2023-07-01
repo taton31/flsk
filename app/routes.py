@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, jsonify
 from werkzeug.urls import url_parse
 from app.forms import LoginForm, SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -45,14 +45,9 @@ def signup():
     return render_template('signup.html', form=form)
 
 
-@app.route('/converter', methods=['GET', 'POST'])
+@app.route('/converter')
 def converter():
-    # form = LoginForm()
-    # if form.validate_on_submit():
-    #     flash('Login requested for user {}, remember_me={}'.format(
-    #         form.username.data, form.remember_me.data))
-    #     return redirect(url_for('index'))
-    return render_template('coverter.html')
+    return render_template('converter.html')
 
 
 @app.route('/logout')
@@ -67,3 +62,9 @@ def users():
     users = User.query.all()
     return render_template('users.html', users = users)
 
+
+@app.route('/get_rate', methods=['POST'])
+def translate_text():
+    return jsonify({'text': translate(request.form['text'],
+                                      request.form['source_language'],
+                                      request.form['dest_language'])})

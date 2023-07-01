@@ -14,10 +14,4 @@ bootstrap = Bootstrap(app)
 login.login_view = 'login'
 login.login_message = "Для просмотра этой страницы необходимо авторизоваться"
 
-# def get_locale():
-#     return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-# babel = Babel(app, locale_selector=get_locale)
-# # babel.init_app(app, locale_selector=get_locale)
-
 from app import routes, models, log

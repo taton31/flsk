@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block scripts %} 
+<script>
+   
+    function translate(sourceElem, destElem, sourceLang, destLang) {
+        $.post('/translate', {
+            text: $(sourceElem).text(),
+            source_language: sourceLang,
+            dest_language: destLang
+        }).done(function(response) {
+            $(destElem).text(response['text'])
+        }).fail(function() {
+            $(destElem).text("{{ _('Error: Could not contact server.') }}");
+        });
+    }
+    
+    // function solve() {
+    //     var chip = Number(document.getElementById('chip').value);
+    //     var amount = Number(document.getElementById('amount').value);
+    //     var mode = Number(document.getElementById('mode').value);
+    //     var bright = Number(document.getElementById('bright').value);
+    //     var current = chip * amount * mode * bright / 100 / 1000;
+    //     document.getElementById('current').innerHTML = current.toFixed(2);
+    //     var power = current * (chip > 20 ? 5 : 12);
+    //     document.getElementById('power').innerHTML = power.toFixed(2);
+    //     document.getElementById('supply').innerHTML = (power*1.2).toFixed(2);
+    //     document.getElementById('bright_v').innerHTML = bright + '%';
+    // }
+</script>
+
+{% endblock %}
+
+
+{% block app_content %} 
+
+
+        <div class="led_calc">
+        
+            <h3>Чип ленты</h3>
+            
+            <select id="chip" onchange="solve()">
+            <option value="16">WS2811 (12V)</option>
+            <option value="33">WS2812 (5V)</option>
+            <option value="28">WS2812 ECO (5V)</option>
+            <option value="31">WS2813 (5V)</option>
+            <option value="12">WS2815 (12V)</option>
+            <option value="16">WS2818 (12V)</option>
+            </select>
+            
+            <h3>Кол-во светодиодов (не чипов)</h3>
+            <input id="amount" type="number" value="60" onchange="solve()">
+            
+            <h3>Режим работы</h3>
+            
+            <select id="mode" onchange="solve()">
+            <option value="0.2">Динамический эффект</option>
+            <option value="0.4">Один цвет или радуга</option>
+            <option value="1">Белый цвет</option>
+            </select>
+            
+            
+            <h3>Яркость</h3>
+            <input id="bright" type="range" min="0" max="100" style="width: 200px;" onchange="solve()"><label id="bright_v">50%</label>
+            
+            <h3>Результат</h3>
+            Ток: <label id="current">0</label> А
+            <br>
+            Мощность: <label id="power">0</label> Вт
+            <br>
+            Блок питания (запас +20%): <label id="supply">0</label> Вт
+            
+            <br>
+            <br>
+            <i>*Не очень красиво, зато сделал сам =)</i>
+            
+            </div>
+
+
+{% endblock %}
