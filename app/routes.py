@@ -4,7 +4,7 @@ from werkzeug.urls import url_parse
 from app.forms import LoginForm, SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User
-
+from app.rate import get_rate
 
 
 @app.route('/')
@@ -63,8 +63,9 @@ def users():
     return render_template('users.html', users = users)
 
 
-@app.route('/get_rate', methods=['POST'])
-def translate_text():
-    return jsonify({'text': translate(request.form['text'],
-                                      request.form['source_language'],
-                                      request.form['dest_language'])})
+@app.route('/convert', methods=['POST'])
+def convert():
+    res = get_rate(request.form['cur_from'],
+                    request.form['cur_to'],
+                    float(request.form['value']))
+    return jsonify({'text': round(res, 2)})
