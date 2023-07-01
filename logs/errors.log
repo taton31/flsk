@@ -1,0 +1,60 @@
+2023-07-02 01:24:25,082 ERROR: Exception on /convert [POST] [in C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\rabota\flask\fl\app\routes.py", line 70, in convert
+ValueError: could not convert string to float: ''
+2023-07-02 01:24:27,540 ERROR: Exception on /convert [POST] [in C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\rabota\flask\fl\app\routes.py", line 70, in convert
+ValueError: could not convert string to float: ''
+2023-07-02 01:24:28,798 ERROR: Exception on /convert [POST] [in C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\rabota\flask\fl\app\routes.py", line 70, in convert
+ValueError: could not convert string to float: ''
+2023-07-02 01:24:29,782 ERROR: Exception on /convert [POST] [in C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\rabota\flask\fl\app\routes.py", line 70, in convert
+ValueError: could not convert string to float: ''
+2023-07-02 01:24:30,096 ERROR: Exception on /convert [POST] [in C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\Desktop\rabota\flask\fl\flsk\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\rabota\flask\fl\app\routes.py", line 70, in convert
+ValueError: could not convert string to float: ''

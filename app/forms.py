@@ -17,9 +17,9 @@ class LoginForm(FlaskForm):
 
 
 class SignUpForm(FlaskForm):
-    username = StringField('Имя', validators=[DataRequired(message=DataRequired_ru)])
-    email = StringField('Email', validators=[DataRequired(message=DataRequired_ru), Email(message=Email_ru)])
-    password = PasswordField('Пароль', validators=[DataRequired(message=DataRequired_ru), Length(min=8)])
+    username = StringField('Имя', validators=[DataRequired(message=DataRequired_ru), Length(max=64)])
+    email = StringField('Email', validators=[DataRequired(message=DataRequired_ru), Email(message=Email_ru), Length(max=120)])
+    password = PasswordField('Пароль', validators=[DataRequired(message=DataRequired_ru), Length(min=8, max=64)])
     password2 = PasswordField(
         'Повторите пароль', validators=[DataRequired(message=DataRequired_ru), EqualTo('password', message=EqualTo_ru)])
     submit = SubmitField('Зарегистрироваться')
