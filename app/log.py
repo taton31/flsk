@@ -5,10 +5,9 @@ import os
 
 if not app.debug:
 
-
     if not os.path.exists('logs'):
         os.mkdir('logs')
-        
+
     file_handler = RotatingFileHandler('logs/errors.log', maxBytes=10240,
                                        backupCount=10)
     file_handler.setFormatter(logging.Formatter(
